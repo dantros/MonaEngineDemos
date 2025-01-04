@@ -1,5 +1,18 @@
 
-add_executable(TopDown "top_down_demo.cpp")
+add_executable(TopDown
+    top_down_demo.cpp
+    level_progression.h
+    level_progression.cpp
+    high_level_game.h
+    coin.h
+    coin.cpp
+    floor.h
+    floor.cpp
+    player.h
+    player.cpp
+    top_down_camera.h
+    top_down_camera.cpp
+)
 set_property(TARGET TopDown  PROPERTY CXX_STANDARD 20)
 target_link_libraries(TopDown  PRIVATE MonaEngine)
 
