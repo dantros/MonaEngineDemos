@@ -12,6 +12,11 @@ if (${BUILD_TOP_DOWN_DEMO})
     add_subdirectory(TopDown)
 endif()
 
+option(BUILD_BREAKOUT2 "" ON)
+if (${BUILD_BREAKOUT2})
+    add_subdirectory(Breakout2)
+endif()
+
 option(BUILD_SIDE_SCROLLING_DEMO "" OFF)
 if (${BUILD_SIDE_SCROLLING_DEMO})
     add_subdirectory(SideScrolling)

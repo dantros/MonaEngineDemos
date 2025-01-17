@@ -48,6 +48,6 @@ install(TARGETS TopDown
 )
 
 install(
-    DIRECTORY ${CMAKE_SOURCE_DIR}/Assets
-    DESTINATION ${CMAKE_INSTALL_PREFIX}/bin
+    DIRECTORY ${CMAKE_SOURCE_DIR}/TopDown/Assets
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/TopDown/bin
 )
