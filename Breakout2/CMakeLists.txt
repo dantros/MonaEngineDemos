@@ -1,4 +1,6 @@
 
+# Breakout2 Demo
+
 add_subdirectory(breakout_lib)
 set(breakout_lib_INCLUDES breakout_lib/public)
 
@@ -13,25 +15,26 @@ target_include_directories(BreakoutMona  PRIVATE
     ${THIRD_PARTY_INCLUDE_DIRECTORIES}
     ${breakout_lib_INCLUDES}
 )
+
+# Making OpenAL available when executing the program from Visual Studio
 add_custom_command(TARGET BreakoutMona POST_BUILD        
-		COMMAND ${CMAKE_COMMAND} -E copy_if_different 
-        $<TARGET_FILE:OpenAL> $<TARGET_FILE_DIR:BreakoutMona>
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different 
+    $<TARGET_FILE:OpenAL> $<TARGET_FILE_DIR:BreakoutMona>
 )
 
 # Setting up the configuration file to use the asset directories from the source code, this is only for development.
 set(APPLICATION_ASSETS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Assets)
 set(ENGINE_ASSETS_DIR ${CMAKE_SOURCE_DIR}/MonaEngine/EngineAssets)
 configure_file(${CMAKE_SOURCE_DIR}/MonaEngine/config.json.in config.json)
-
 add_custom_command(TARGET BreakoutMona POST_BUILD
-		COMMAND ${CMAKE_COMMAND} -E copy_if_different 
-        config.json $<TARGET_FILE_DIR:BreakoutMona>
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different 
+    config.json $<TARGET_FILE_DIR:BreakoutMona>
 )
 
-# Proceso de instalación
+# Install process
 include(GNUInstallDirs)
-install(TARGETS BreakoutMona
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+install(TARGETS BreakoutMona OpenAL
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}/Breakout2
         COMPONENT BreakoutMona_Runtime
     PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
         COMPONENT BreakoutMona_Include
@@ -43,6 +46,11 @@ install(TARGETS BreakoutMona
 )
 
 install(
-    DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Breakout2/Assets
-    DESTINATION ${CMAKE_INSTALL_PREFIX}/Breakout2/bin
+    DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Assets
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/bin/Breakout2
+)
+
+install(
+	DIRECTORY ${ENGINE_ASSETS_DIR}
+	DESTINATION ${CMAKE_INSTALL_PREFIX}/bin/Breakout2
 )
