@@ -7,6 +7,11 @@ option(MONA_INSTALL "" OFF)
 add_subdirectory(MonaEngine)
 
 # Building demos
+option(BUILD_ANIMATION_AUDIO "" ON)
+if (${BUILD_ANIMATION_AUDIO})
+    add_subdirectory(AnimationAudio)
+endif()
+
 option(BUILD_TOP_DOWN_DEMO "" ON)
 if (${BUILD_TOP_DOWN_DEMO})
     add_subdirectory(TopDown)
