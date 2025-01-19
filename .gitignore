@@ -5,7 +5,7 @@
 *.slo
 *.lo
 *.o
-*.obj
+#*.obj # these can be models
 
 # Precompiled Headers
 *.gch
