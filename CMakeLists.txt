@@ -27,6 +27,11 @@ if (${BUILD_RND_ECS})
     add_subdirectory(RnD-ECS)
 endif()
 
+option(BUILD_RND_IK "" ON)
+if (${BUILD_RND_IK})
+    add_subdirectory(RnD-IK)
+endif()
+
 option(BUILD_SIDE_SCROLLING_DEMO "" OFF)
 if (${BUILD_SIDE_SCROLLING_DEMO})
     add_subdirectory(SideScrolling)
