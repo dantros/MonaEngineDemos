@@ -22,6 +22,11 @@ if (${BUILD_BREAKOUT2})
     add_subdirectory(Breakout2)
 endif()
 
+option(BUILD_BREAKOUT_PHYSICS "" ON)
+if (${BUILD_BREAKOUT_PHYSICS})
+    add_subdirectory(BreakoutPhysics)
+endif()
+
 option(BUILD_RND_ECS "" ON)
 if (${BUILD_RND_ECS})
     add_subdirectory(RnD-ECS)
