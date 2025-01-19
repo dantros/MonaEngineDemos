@@ -22,6 +22,11 @@ if (${BUILD_BREAKOUT2})
     add_subdirectory(Breakout2)
 endif()
 
+option(BUILD_RND_ECS "" ON)
+if (${BUILD_RND_ECS})
+    add_subdirectory(RnD-ECS)
+endif()
+
 option(BUILD_SIDE_SCROLLING_DEMO "" OFF)
 if (${BUILD_SIDE_SCROLLING_DEMO})
     add_subdirectory(SideScrolling)
