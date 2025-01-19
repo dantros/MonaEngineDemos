@@ -29,7 +29,7 @@ add_custom_command(TARGET AnimationAudio POST_BUILD
 # Install process
 include(GNUInstallDirs)
 install(TARGETS AnimationAudio OpenAL
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}/Breakout2
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}/AnimationAudio
         COMPONENT AnimationAudio_Runtime
     PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
         COMPONENT BAnimationAudio_Include
