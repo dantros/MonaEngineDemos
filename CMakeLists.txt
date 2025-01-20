@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.30)
-project(MonaEngineDemos_sln C CXX)
+project(MonaEngineDemos C CXX)
 
 # Building the engine
 option(MONA_BUILD_EXAMPLES "" OFF)
