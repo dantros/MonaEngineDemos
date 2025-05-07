@@ -281,6 +281,8 @@ public:
 		world.GetComponentHandle<Mona::IKNavigationComponent>(character)->AddTerrain(terrainObject2);
 		auto terrainObject3 = AddTerrain3(world);
 		world.GetComponentHandle<Mona::IKNavigationComponent>(character)->AddTerrain(terrainObject3);
+
+		world.SetDebugDrawing(Mona::DebugDrawing::IKNavigation);
 	}
 
 	virtual void UserShutDown(Mona::World& world) noexcept override {

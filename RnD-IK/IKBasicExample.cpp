@@ -204,6 +204,8 @@ public:
 		auto character = world.CreateGameObject<IKRigCharacter>("akai", glm::vec3(0,-10,0), 0);
 		auto terrainObject = AddTerrain(world);
 		world.GetComponentHandle<Mona::IKNavigationComponent>(character)->AddTerrain(terrainObject);
+
+		world.SetDebugDrawing(Mona::DebugDrawing::IKNavigation);
 	}
 
 	virtual void UserShutDown(Mona::World& world) noexcept override {

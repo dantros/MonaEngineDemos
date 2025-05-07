@@ -208,6 +208,8 @@ public:
 		world.GetComponentHandle<Mona::IKNavigationComponent>(character1)->AddTerrain(terrainObject1);
 		auto character2 = world.CreateGameObject<IKRigCharacter>("xbot", glm::vec3(-20, -5, 0), 2);
 		world.GetComponentHandle<Mona::IKNavigationComponent>(character2)->AddTerrain(terrainObject1);
+
+		world.SetDebugDrawing(Mona::DebugDrawing::IKNavigation);
 	}
 
 	virtual void UserShutDown(Mona::World& world) noexcept override {
