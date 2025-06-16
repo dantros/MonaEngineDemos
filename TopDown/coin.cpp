@@ -2,6 +2,7 @@
 #include "player.h"
 #include "custom_events.h"
 #include <Rendering/PBRTexturedMaterial.hpp>
+#include <tracy/Tracy.hpp>
 
 Coin::Coin() :
     m_angle(0.f),
@@ -33,6 +34,8 @@ void Coin::UserStartUp(Mona::World& world) noexcept
 
 void Coin::UserUpdate(Mona::World& world, float timeStep) noexcept
 {
+    ZoneScoped;
+    
     // Rotation animation
     {
         m_angle += m_speed * timeStep;

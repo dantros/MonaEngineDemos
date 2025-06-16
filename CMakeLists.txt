@@ -4,6 +4,7 @@ project(MonaEngineDemos C CXX)
 # Building the engine
 option(MONA_BUILD_EXAMPLES "" OFF)
 option(MONA_INSTALL "" OFF)
+option(TRACY_ENABLE "" ON)
 add_subdirectory(MonaEngine)
 
 # Building demos

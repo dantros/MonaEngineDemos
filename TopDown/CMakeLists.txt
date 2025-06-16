@@ -16,7 +16,7 @@ add_executable(TopDown
     top_down_camera.cpp
 )
 set_property(TARGET TopDown PROPERTY CXX_STANDARD 20)
-target_link_libraries(TopDown PRIVATE MonaEngine)
+target_link_libraries(TopDown PRIVATE MonaEngine Tracy::TracyClient)
 target_include_directories(TopDown PRIVATE
     ${MONA_INCLUDE_DIRECTORY}
     ${THIRD_PARTY_INCLUDE_DIRECTORIES}

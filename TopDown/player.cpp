@@ -1,5 +1,6 @@
 #include "player.h"
 #include "Rendering/PBRTexturedMaterial.hpp"
+#include <tracy/Tracy.hpp>
 
 Player::Player() : m_speed(0.0f)
 {
@@ -24,6 +25,8 @@ void Player::UserStartUp(Mona::World& world) noexcept
 
 void Player::UserUpdate(Mona::World& world, float timeStep) noexcept
 {
+    ZoneScoped;
+
     auto& input = world.GetInput();
     if (input.IsKeyPressed(MONA_KEY_A) or
         input.IsKeyPressed(MONA_KEY_LEFT) or

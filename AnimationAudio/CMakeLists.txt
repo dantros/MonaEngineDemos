@@ -4,7 +4,7 @@
 add_executable(AnimationAudio "AnimationAudio.cpp") 
 set_property(TARGET AnimationAudio  PROPERTY CXX_STANDARD 20)
 target_link_libraries(AnimationAudio  PRIVATE
-    MonaEngine
+    MonaEngine Tracy::TracyClient
 )
 target_include_directories(AnimationAudio  PRIVATE
     ${MONA_INCLUDE_DIRECTORY}
